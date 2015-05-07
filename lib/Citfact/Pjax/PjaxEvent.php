@@ -17,6 +17,7 @@ class PjaxEvent
 {
     /**
      * @param string $buffer
+     * @return string
      */
     public static function endBufferContent(&$buffer)
     {

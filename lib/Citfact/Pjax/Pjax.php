@@ -34,7 +34,9 @@ class Pjax implements PjaxInterface
      */
     public function getResponseContent($buffer)
     {
-        $crawler = new Crawler($buffer);
+        $crawler = new Crawler();
+        $crawler->addHtmlContent($buffer);
+
         $responseTitle = $crawler->filter('head > title');
         $responseContainer = $crawler->filter($this->getPjaxContainer());
 
