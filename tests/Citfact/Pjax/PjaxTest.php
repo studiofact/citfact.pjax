@@ -46,5 +46,8 @@ class PjaxTest extends \PHPUnit_Framework_TestCase
 
         $response = '<head><title>Test</title></head><div id="test">content</div>';
         $this->assertEquals('<title>Test</title>content', $this->pjax->getResponseContent($response));
+
+        $response = '<div id="test-fake">content</div>';
+        $this->assertFalse($this->pjax->getResponseContent($response));
     }
 }
