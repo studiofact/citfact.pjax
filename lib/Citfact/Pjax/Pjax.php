@@ -17,16 +17,24 @@ use Symfony\Component\DomCrawler\Crawler;
 class Pjax implements PjaxInterface
 {
     /**
-     * @var Application
+     * @var Bitrix\Main\Application
      */
     protected $app;
 
     /**
-     * @param Application $app
+     * @param Bitrix\Main\Application $app
      */
     public function __construct(Application $app)
     {
         $this->app = $app;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setHeaderPjaxUrl($url = '')
+    {
+        header(sprintf('X-PJAX-URL: %s', $url ?: $this->getServer()->get('REQUEST_URI')));
     }
 
     /**

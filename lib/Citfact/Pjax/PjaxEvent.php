@@ -25,6 +25,9 @@ class PjaxEvent
         $pjax = new Pjax($app);
 
         if ($pjax->isPjaxRequest() && ($content = $pjax->getResponseContent($buffer)) !== false) {
+            // Updating address bar with the last URL in case there were redirects
+            $pjax->setHeaderPjaxUrl();
+            // Set new content with pjax container
             $buffer = $content;
         }
 

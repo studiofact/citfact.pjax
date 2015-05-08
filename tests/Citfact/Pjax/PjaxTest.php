@@ -25,6 +25,19 @@ class PjaxTest extends \PHPUnit_Framework_TestCase
         $this->pjax = new Pjax(Application::getInstance());
     }
 
+    /**
+     * @runInSeparateProcess
+     */
+    public function testSetHeaderPjaxUrl()
+    {
+        $this->pjax->getServer()->set(array('REQUEST_URI', '/test?abc'));
+        $this->pjax->setHeaderPjaxUrl();
+        $this->assertContains('X-PJAX-URL: /test?abc', xdebug_get_headers());
+
+        $this->pjax->setHeaderPjaxUrl('/test-fake');
+        $this->assertContains('X-PJAX-URL: /test-fake', xdebug_get_headers());
+    }
+
     public function testIsPjaxRequest()
     {
         $this->pjax->getServer()->set(array('HTTP_X_PJAX' => true));
