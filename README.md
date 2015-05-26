@@ -28,3 +28,5 @@ PJAX для 1C-Bitrix
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 ```
+
+Далее в административной панели в разделе "Marketplace > Установленные решения" устанавливаем модуль.
