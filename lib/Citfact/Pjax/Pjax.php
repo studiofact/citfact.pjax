@@ -64,7 +64,7 @@ class Pjax implements PjaxInterface
      */
     public function isPjaxRequest()
     {
-        return (bool)$this->getServer()->get('HTTP_X_PJAX');
+        return (bool) $this->getServer()->get('HTTP_X_PJAX');
     }
 
     /**

@@ -14,29 +14,30 @@ namespace Citfact\Pjax;
 interface PjaxInterface
 {
     /**
-     * Set the last URL in case there were redirects
+     * Set the last URL in case there were redirects.
      *
      * @param string $url
      */
     public function setHeaderPjaxUrl($url = '');
 
     /**
-     * Return content with pjax container
+     * Return content with pjax container.
      *
      * @param string $buffer
+     *
      * @return string|bool
      */
     public function getResponseContent($buffer);
 
     /**
-     * Check X-PJAX header
+     * Check X-PJAX header.
      *
      * @return bool
      */
     public function isPjaxRequest();
 
     /**
-     * Return X-PJAX-CONTAINER header
+     * Return X-PJAX-CONTAINER header.
      *
      * @return string
      */
