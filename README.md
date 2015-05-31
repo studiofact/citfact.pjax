@@ -13,13 +13,10 @@ PJAX для 1C-Bitrix
 
 ## Установка
 
-Создайте или обновите ``composer.json`` файл и запустите ``php composer.phar update``
-``` json
-  {
-      "require": {
-          "citfact/pjax": "dev-master"
-      }
-  }
+Используйте composer для управления зависимостями и установкой модуля
+
+``` bash
+php composer.phar require citfact/pjax
 ```
 
 Подключите composer автолоадер 
